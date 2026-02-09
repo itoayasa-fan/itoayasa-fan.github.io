@@ -45,32 +45,36 @@
     h1{font-size:clamp(28px,5vw,40px);}
     p{line-height:1.7; margin:0 0 12px;}
     .muted{color:var(--muted)}
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:20px;
+    table{
+      width:100%;
+      border-collapse:collapse;
+      margin:16px 0;
+      font-size:1.05em;
     }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:24px;
+    th, td{
       border:1px solid #f3e6ec;
+      padding:12px;
+      text-align:left;
     }
-    ul{line-height:1.8; padding-left:24px; margin:12px 0; list-style-type:disc;}
-    footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:14px;
-      padding:40px 20px;
-    }
+    th{background:var(--primary-soft); font-weight:bold;}
+    tr:nth-child(even){background:#fffafa;}
+    a{color:var(--primary); text-decoration:none;}
+    a:hover{text-decoration:underline;}
     img.avatar{
       width:180px; height:180px; border-radius:50%; 
       margin:20px auto; display:block; 
       border:4px solid var(--primary); 
       box-shadow:0 4px 12px rgba(242,167,198,0.5);
     }
+    footer{
+      text-align:center;
+      color:var(--muted);
+      font-size:14px;
+      padding:40px 20px;
+    }
     @media (max-width:600px){
-      .grid{grid-template-columns:1fr;}
+      table{font-size:0.95em;}
+      th, td{padding:8px;}
     }
   </style>
 </head>
@@ -82,59 +86,45 @@
     <section class="hero">
       <h1>伊藤彩沙 Ayasa Ito</h1>
       <p class="muted">声優です🤍ྀི🎀よろしくお願いします🫶🏻</p>
-      <p>粉丝自制页面  一切以官方信息为准！</p>
+      <p>粉丝自制页面 一切以官方信息为准！</p>
       <img class="avatar" src="https://pbs.twimg.com/profile_images/1916439641282228224/RX5esO9u.jpg" alt="伊藤彩沙官方头像">
     </section>
 
-    <section class="grid">
-      <div class="card">
-        <h3>个人信息</h3>
-        <ul>
-          <li>生日：1996年8月17日</li>
-          <li>出生地：京都府</li>
-          <li>血型：B型</li>
-          <li>身高：153cm</li>
-          <li>所属：响 (HiBiKi)</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>代表作品</h3>
-        <ul>
-          <li>二人是少女福尔摩斯（明神川爱丽丝）</li>
-          <li>BanG Dream!（市谷有咲）</li>
-          <li>少女☆歌剧 Revue Starlight（花柳香子）</li>
-          <li>梦梦猫（月岛舞良）</li>
-          <li>大正处女御伽话（白鸟小鸟）</li>
-          <li>赛马娘 Pretty Derby Season 3（强击）</li>
-          <li>素材采集家的异世界旅行记（比）</li>
-          <li>魔王的女儿太温柔了！！（莎蒂）</li>
-          <li>崩坏：星穹铁道（赛飞儿）</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>官方链接</h3>
-        <ul>
-          <li>X（Twitter）：https://x.com/ayasa_ito</li>
-          <li>Instagram：https://www.instagram.com/ayasacream/</li>
-          <li>事务所官网：https://hibiki-cast.jp</li>
-        </ul>
-        <p class="muted">（本页为粉丝制作，仅供参考，一切以官方为准）</p>
-      </div>
+    <section class="hero" style="margin-top:24px">
+      <h2>个人信息</h2>
+      <ul style="line-height:1.8; padding-left:24px; margin:12px 0; list-style-type:disc;">
+        <li>生日：1996年8月17日</li>
+        <li>出生地：京都府</li>
+        <li>血型：B型</li>
+        <li>身高：153cm</li>
+        <li>所属：响 (HiBiKi)</li>
+      </ul>
     </section>
 
     <section class="hero" style="margin-top:24px">
-      <h2>近期活动（粉丝整理・2026年2月更新）</h2>
-      <ul class="muted" style="font-size:1.05em;">
-       <li>2026-04-26｜峰月律生诞祭「もぐもぐPON☆パジャマぱ～てぃ」嘉宾出演</li>
-        <li>2026-04-12｜BanG Dream! Special LIVE in TAIPEI DAY2（Poppin'Party × Roselia）</li>
-        <li>2026-02-28｜BanG Dream! 10th Anniversary LIVE @ Kアリーナ横浜</li>
-        <li>2026-07予定｜《魔法少女奈叶 EXCEEDS Gun Blaze Vengeance》播出</li>
-        <li>更多实时动态请关注官方 X：@ayasa_ito </li>
+  <h2>近期活动（粉丝整理・Google 日历）</h2>
+  <p class="muted">实时更新中，一切以官方为准。更多详情请查看官方 X。</p>
+  
+  <!-- 用 div 包 iframe，便于加 CSS 覆盖 -->
+  <div class="calendar-wrapper" style="background: var(--bg); border-radius: var(--radius); padding: 16px; border: 2px solid var(--primary-soft); overflow: hidden;">
+    <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Asia%2FTokyo&showPrint=0&src=ODNlMWM1NzM5Y2Q1Y2VhZDhlMjM1MDhhMmE4MmQyOWUwNjNkMDBkNWJlOGFiNGIyMGI0YjAyODA1YmIwNjM5YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23d81b60" style="border:solid 1px #777" width="725" height="600" frameborder="0" scrolling="no"></iframe>
+  </div>
+  
+  <p class="muted" style="margin-top:16px;">关注官方 X：<a href="https://x.com/ayasa_ito" target="_blank">@ayasa_ito</a></p>
+</section>
+
+    <section class="hero" style="margin-top:24px">
+      <h2>官方链接</h2>
+      <ul style="line-height:1.8; padding-left:24px; margin:12px 0;">
+        <li><a href="https://x.com/ayasa_ito" target="_blank">X（Twitter）：@ayasa_ito</a></li>
+        <li><a href="https://www.instagram.com/ayasacream/" target="_blank">Instagram：@ayasacream</a></li>
+        <li><a href="https://hibiki-cast.jp" target="_blank">事务所官网：响 HiBiKi</a></li>
       </ul>
+      <p class="muted">（本页为粉丝制作，仅供参考，一切以官方为准）</p>
     </section>
   </main>
   <footer>
-    © 2026 非官方粉丝页 | Made with love for Ayasa
+    © 2026 非官方粉丝页
   </footer>
 </body>
 </html>
